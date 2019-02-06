@@ -1,0 +1,6 @@
+{
+    "variable-name": [false],
+    "indent": [true, "tabs", 2],
+    "import-name": false,
+    "extends": "tslint-config-airbnb"
+}
