@@ -1,10 +1,9 @@
 import React, { ReactNode, Component } from 'react';
 import styledComponents from 'styled-components';
 
-import { IProps } from './types';
+import { IProps, IState } from './types';
 import { TableItem } from '../table-item';
 import { getRandomPosition } from '../../lib';
-import { IState } from '../table-item/types';
 
 const StyledTableWrapper = styledComponents.div`
   display: grid;
@@ -42,6 +41,8 @@ export class Table extends Component<IProps, IState> {
     this.state = {
       elements: [getRandomPosition()],
     };
+
+    this.onArrowKeydown = this.onArrowKeydown.bind(this);
   }
 
   componentWillMount() {

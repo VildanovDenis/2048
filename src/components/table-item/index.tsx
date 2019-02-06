@@ -1,7 +1,7 @@
 import React, { ReactNode, Component } from 'react';
 import styledComponents from 'styled-components';
 
-import { IProps, IState } from './types';
+import { IProps } from './types';
 import { getRandomPosition } from '../../lib';
 
 const StyledTableItem = styledComponents.div<{column: number; row: number}>`
@@ -14,23 +14,16 @@ const StyledTableItem = styledComponents.div<{column: number; row: number}>`
   box-sizing: border-box;
 `;
 
-export class TableItem extends Component<IProps, IState> {
+export class TableItem extends Component<IProps> {
   constructor(props: IProps) {
     super(props);
-    this.state = {
-      position: getRandomPosition(),
-    };
   }
 
   render(): ReactNode {
-    const { position } = this.state;
-
-    const [row, column] = position;
-
     return (
       <StyledTableItem
-        column={column}
-        row={row}
+        column={1}
+        row={2}
       >
         2
       </StyledTableItem>
